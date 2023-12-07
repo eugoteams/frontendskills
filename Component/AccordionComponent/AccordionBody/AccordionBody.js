@@ -17,17 +17,21 @@ const AccordionBody = ({ description, content }) => {
             <Text
               dangerouslySetInnerHTML={{ __html: description }}
               $fz="1.3rem"
+              $fw="500"
+              $color="#495057"
             ></Text>
             <ul>
               {content.map((cnt, index) => {
                 return (
                   <li key={`ch_content_${index}`}>
                     <Stack>
-                      <Title $fz="1.45rem" $fw={"700"}>
+                      <Title $fz="1.45rem" $fw={"700"} $color="#212529">
                         {cnt["subTitle"]}
                       </Title>
                       <Text
                         $fz="1.3rem"
+                        $fw="500"
+                        $color="#495057"
                         dangerouslySetInnerHTML={{
                           __html: cnt["subDescription"],
                         }}

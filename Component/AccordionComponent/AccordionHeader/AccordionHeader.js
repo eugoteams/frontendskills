@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { Fragment, memo, useCallback } from "react";
+import React, { Fragment, memo, useCallback, useState } from "react";
 import Div from "@/Component/UI/Div";
 import Flex from "@/Component/UI/Flex";
 import Text from "@/Component/UI/Text";
@@ -11,27 +11,48 @@ import { ChevronUp, ChevronDown } from "lucide-react";
 import NumberComponent from "../NumberComponent/NumberComponent";
 
 const AccordionHeader = ({ id, title, tags, onClickListener, clicked }) => {
+  const [mouseEnter, setMouseEnter] = useState(false);
   const iconSize = 20;
+  const onHoverColor = "#495057";
 
   const onClick = useCallback(() => {
     onClickListener();
   }, []);
 
+  console.log("Mouse enter :: ", mouseEnter);
+
   return (
     <Fragment>
-      <Div onClick={onClick} $height={"9rem"} $zIndex={"32"} $pd={"1rem"}>
+      <Div
+        onClick={onClick}
+        $height={"9rem"}
+        $zIndex={"32"}
+        $pd={"1rem"}
+        onMouseEnter={() => {
+          setMouseEnter((prevState) => !prevState);
+          console.log("The Mouse Has entered.");
+        }}
+        onMouseLeave={() => {
+          setMouseEnter((prevState) => !prevState);
+        }}
+      >
         <Flex>
           <Container>
             <Flex>
-              <NumberComponent id={id} />
+              <NumberComponent id={id} color={mouseEnter ? onHoverColor : ""} />
             </Flex>
           </Container>
           <Container $width={"100%"}>
             <Stack>
-              <Title $fz="1.8rem" $fw={"750"}>
+              <Title
+                $fz="1.8rem"
+                $fw={"750"}
+                $color={mouseEnter ? onHoverColor : ""}
+              >
                 {title}
               </Title>
               <Text
+                $color={mouseEnter ? onHoverColor : ""}
                 dangerouslySetInnerHTML={{ __html: tags }}
                 $fz="1.3rem"
                 $fw="500"

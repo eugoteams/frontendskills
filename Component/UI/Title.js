@@ -7,12 +7,13 @@ const Title = styled.div`
   font-size: ${(props) => (props.$fz ? props.$fz : "1rem")};
   font-weight: ${(props) => (props.$fw ? props.$fw : "500")};
   margin: 0.5rem 1rem;
-  color: ${(props) => (props.$color ? props.$color : "#212529")};
+  color: ${(props) => (props.$color ? props.$color : "#868e96")};
   height: 100%;
   width: 100%;
   text-align: left;
+  transition: all 0.2s linear;
   //border: 1px solid red;
-  // line-height: 1.5;
+  line-height: 1.5;
   // background-color: blue;
   ${(props) =>
     props.$center &&

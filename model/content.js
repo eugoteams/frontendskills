@@ -132,7 +132,7 @@ const content = [
   },
   {
     title: "data types",
-    tags: "7 primitive data types in JS.(<b>String</b> ,<b>Number</b> , <b>Bigint</b> ,<b>Boolean</b> , <b>null</b> ,<b>undefined</b> ,<b>Symbol</b>,)& <b>typeOf operator</b>.",
+    tags: "7 primitive data types in JS.(<b>String</b> ,<b>Number</b> , <b>Bigint</b> ,<b>Boolean</b> , <b>null</b> ,<b>undefined</b> ,<b>Symbol</b>,) & <b>typeOf operator</b>.",
     description: `In JavaScript, a primitive (primitive value, primitive data type) is data that is not an object and has no methods or properties. There are 7 primitive data types:`,
     content: [
       {

@@ -11,8 +11,9 @@ const NumberDiv = styled.div`
   // border: 1px solid red;
   width: fit-content;
   height: auto;
-  color: #868e96;
+  color: ${(props) => (props.$color ? props.$color : "#868e96")};
   //background-color: blue;
+  transition: all 0.4s linear;
 
   &:after {
     content: "";
@@ -45,10 +46,10 @@ const NumberDiv = styled.div`
   }
 `;
 
-const NumberComponent = ({ id }) => {
+const NumberComponent = ({ id, color = "" }) => {
   return (
     <Fragment>
-      <NumberDiv>{id}</NumberDiv>
+      <NumberDiv $color={color}>{id}</NumberDiv>
     </Fragment>
   );
 };
