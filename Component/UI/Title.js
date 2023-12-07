@@ -12,9 +12,8 @@ const Title = styled.div`
   width: 100%;
   text-align: left;
   transition: all 0.2s linear;
-  //border: 1px solid red;
   line-height: 1.5;
-  // background-color: blue;
+
   ${(props) =>
     props.$center &&
     css`
@@ -25,7 +24,6 @@ const Title = styled.div`
 
   //Tablet-View-Screen
   @media (max-width: 48em) {
-    color: green;
   }
 
   //Mobile-Large-Screen
