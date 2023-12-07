@@ -11,9 +11,22 @@ const inter = Inter({
 
 const LayoutContainer = styled.div`
   width: 95rem;
-  margin: 1rem auto;
-  height: 100vh;
+  margin: 4rem auto;
+  height: 100%;
   padding: 1.5rem;
+  // background-color: green;
+
+  //Tablet-View
+  @media (max-width: 48em) {
+    width: 100%;
+    height: 100%;
+    //  background-color: red;
+  }
+
+  //Mobile-Large-Screen
+  @media (max-width: 27em) {
+    padding: 0.5rem;
+  }
 `;
 
 const RootLayout = ({ children }) => {

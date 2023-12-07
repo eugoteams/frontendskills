@@ -7,6 +7,11 @@ const Text = styled.div`
   font-weight: ${(props) => (props.$fw ? props.$fw : "400")};
   margin: 0.5rem 1rem;
   line-height: 1.5;
+
+  //Mobile-Large-View
+  @media (max-width: 27em) {
+    font-size: 1rem;
+  }
 `;
 
 export default Text;

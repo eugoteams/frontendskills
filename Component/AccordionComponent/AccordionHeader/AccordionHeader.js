@@ -8,6 +8,7 @@ import Container from "@/Component/UI/Container";
 import Title from "@/Component/UI/Title";
 import Stack from "@/Component/UI/Stack";
 import { ChevronUp, ChevronDown } from "lucide-react";
+import NumberComponent from "../NumberComponent/NumberComponent";
 
 const AccordionHeader = ({ id, title, tags, onClickListener, clicked }) => {
   const iconSize = 20;
@@ -22,19 +23,18 @@ const AccordionHeader = ({ id, title, tags, onClickListener, clicked }) => {
         <Flex>
           <Container>
             <Flex>
-              <Title $fz="1.4rem" $fw="900" $center={true}>
-                {id}
-              </Title>
+              <NumberComponent id={id} />
             </Flex>
           </Container>
           <Container $width={"100%"}>
             <Stack>
-              <Title $fz="1.5rem" $fw={"600"}>
+              <Title $fz="1.8rem" $fw={"750"}>
                 {title}
               </Title>
               <Text
                 dangerouslySetInnerHTML={{ __html: tags }}
-                $fz="1.2rem"
+                $fz="1.3rem"
+                $fw="500"
               ></Text>
             </Stack>
           </Container>

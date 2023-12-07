@@ -21,6 +21,20 @@ const Title = styled.div`
       align-items: center;
       justify-content: center;
     `};
+
+  //Tablet-View-Screen
+  @media (max-width: 48em) {
+    color: green;
+  }
+
+  //Mobile-Large-Screen
+  @media (max-width: 27em) {
+    font-size: 1.4rem;
+  }
+  //Mobile-Small-Screen
+  @media (max-width: 20em) {
+    font-size: 1.2rem;
+  }
 `;
 
 export default Title;

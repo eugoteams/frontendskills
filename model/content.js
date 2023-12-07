@@ -132,7 +132,7 @@ const content = [
   },
   {
     title: "data types",
-    tags: "Data type refers to the type of data that a JavaScript variable can hold.(<b>String</b> ,<b>Number</b> , <b>Bigint</b> ,<b>Boolean</b> , <b>null</b> ,<b>undefined</b> ,<b>Symbol</b>,<b>typeOf</b>)",
+    tags: "7 primitive data types in JS.(<b>String</b> ,<b>Number</b> , <b>Bigint</b> ,<b>Boolean</b> , <b>null</b> ,<b>undefined</b> ,<b>Symbol</b>,)& <b>typeOf operator</b>.",
     description: `In JavaScript, a primitive (primitive value, primitive data type) is data that is not an object and has no methods or properties. There are 7 primitive data types:`,
     content: [
       {
@@ -408,7 +408,7 @@ const content = [
   },
   {
     title: "equality comparisons",
-    tags: `<b>==</b> , <b>===</b> ,<b>Object.is</b>`,
+    tags: `comparison operators  <b>==</b> , <b>===</b> ,<b>Object.is</b>`,
     description: `<p>Comparison operators are used in logical statements to determine equality or difference between variables or values. Comparison operators can be used in conditional statements to compare values and take action depending on the result.</p>`,
     content: [
       {

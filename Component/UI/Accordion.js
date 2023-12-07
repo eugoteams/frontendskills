@@ -12,6 +12,11 @@ const Accordion = styled.div`
   position: relative;
   transition: all 0.1s linear;
   overflow: hidden;
+
+  //Mobile-Large-Screen
+  @media (max-width: 27em) {
+    //margin: 1rem 0.2rem;
+  }
 `;
 
 export default Accordion;

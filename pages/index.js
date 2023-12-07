@@ -9,6 +9,7 @@ import content from "@/model/content";
 import { Fragment } from "react";
 import js from "../public/assets/img/js.png";
 import Image from "next/image";
+import NumberComponent from "@/Component/AccordionComponent/NumberComponent/NumberComponent";
 
 export default function Home() {
   return (
