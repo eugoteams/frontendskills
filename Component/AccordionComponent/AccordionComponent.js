@@ -2,7 +2,6 @@
 
 import { Fragment, useCallback, useState } from "react";
 import Accordion from "../UI/Accordion";
-import Div from "../UI/Div";
 import AccordionHeader from "./AccordionHeader/AccordionHeader";
 import AccordionBody from "./AccordionBody/AccordionBody";
 
