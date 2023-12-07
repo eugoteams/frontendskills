@@ -66,11 +66,17 @@ const content = [
     tags: "JavaScript moves declaration of function ,variables and classes to top of their scope.",
     description: `JavaScript Hoisting refers to the process whereby the interpreter appears to move the declaration of functions, variables, or classes to the top of their scope, prior to execution of the code.`,
     content: [
-      // {
-      //   subTitle: "",
-      //   subDescription: "",
-      //   snippet: ``,
-      // },
+      {
+        subTitle: "Example",
+        subDescription: "",
+        snippet: `
+
+        // using test before declaring
+        console.log(test);   // undefined
+        var test;
+
+        `,
+      },
     ],
   },
   {
@@ -466,58 +472,371 @@ const content = [
     content: [
       {
         subTitle: "for loop",
-        subDescription: `In javascript, the == operator does the type conversion of the operands before comparison.The == operator applies various coercions to both sides (if they are not the same type) before testing for equality (resulting in such behavior as "" == false being true).`,
+        subDescription: `loops unitil a specific conditon evaluates to false.`,
         snippet: `
-        //Syntax
-       for(initialization; condition; afterthought){
+      //Syntax
+      for(initialization; condition; afterthought){
         statement;
-       }
+      }
 
+      for (let step = 0; step < 5; step++) {
+        // Runs 5 times, with values of step 0 through 4.
+        console.log('Walking east one step');
+      }
 
 
  `,
       },
       {
-        subTitle: "=== (isStrictlyEqual)",
-        subDescription: `In javascript, the === operator compares the values and the data types of the operands`,
+        subTitle: "do...while",
+        subDescription: `Repeats until a specified condition evaluates to false.<b>The statements gets executed atleast once.</b>`,
         snippet: `
-
-      let value1 = 2;
-      let value2 = "2";
-
-      console.log(value1 === value2) // false
+      let i = 0;
+      do {
+      i += 1;
+      console.log(i);
+      } while (i < 5);
 
        `,
       },
       {
-        subTitle: "object.is()",
+        subTitle: "while",
         subDescription:
-          "The Object.is() static method determines whether two values are the same value.",
+          "Repeats until a specified condition evaluates to true.",
         snippet: `
-      // Case 1: Evaluation result is the same as using ===
-      Object.is(25, 25); // true
-      Object.is("foo", "foo"); // true
-      Object.is("foo", "bar"); // false
-      Object.is(null, null); // true
-      Object.is(undefined, undefined); // true
-      Object.is(window, window); // true
-      Object.is([], []); // false
-      const foo = { a: 1 };
-      const bar = { a: 1 };
-      const sameFoo = foo;
-      Object.is(foo, foo); // true
-      Object.is(foo, bar); // false
-      Object.is(foo, sameFoo); // true
-
-      // Case 2: Signed zero
-      Object.is(0, -0); // false
-      Object.is(+0, -0); // false
-      Object.is(-0, -0); // true
-
-      // Case 3: NaN
-      Object.is(NaN, 0 / 0); // true
-      Object.is(NaN, Number.NaN); // true
+      let n = 0;
+      let x = 0;
+      while (n < 3) {
+        n++;
+        x += n;
+      }
 `,
+      },
+      {
+        subTitle: "for...in",
+        subDescription:
+          "The for...in statement iterates a specified variable over all the <b>enumerable properties of an object.</b>",
+        snippet: `
+      let obj = {
+        name: "james",
+        age:30
+     }
+
+
+    for(let key in obj){
+        console.log(key,obj[key]) //output: name james age 30
+      }
+`,
+      },
+      {
+        subTitle: "for...of",
+        subDescription:
+          "The for...of statement creates a loop Iterating over iterable objects (including Array, Map, Set, arguments object and so on).",
+        snippet: `
+      let fruits = ["mango","kiwi","appel"];
+
+      for(let fruit of fruits){
+          console.log(fruit)
+      }
+      /*
+      Output:
+      mango
+      kiwi
+      appel
+      */
+`,
+      },
+      {
+        subTitle: "break & continue",
+        subDescription: `Use the break statement to <b>terminate a loop , switch</b>.The continue statement can be used to restart a while, do-while, for`,
+        snippet: `
+      let i = 0;
+      let n = 0;
+      while (i < 5) {
+        i++;
+        if (i === 3) {
+          continue; //replace with break to terminate.
+        }
+        n += i;
+        console.log(n);
+      }
+      // Logs:
+      // 1 3 7 12
+`,
+      },
+    ],
+  },
+  {
+    title: `control flow`,
+    tags: `In JavaScript, the Control flow is a way of how your computer runs code from top to bottom.`,
+    description: `It starts from the first line and ends at the last line unless it hits any statement that changes the control flow of the program such as loops, conditionals, etc.`,
+    content: [
+      {
+        subTitle: `conditional statement`,
+        subDescription: `When you write code, you often want to perform different actions for different decisions. You can use conditional statements in your code to do this. In JavaScript, we have three conditional statements: if, if...else, and switch.`,
+        snippet: `
+      let a =12;
+      let b = 10;
+
+      //If block
+      if(a > b){
+          console.log("true")
+      }
+
+      // If...else block
+      if(a<b){
+          console.log(true);
+      }else{
+          console.log(false);
+      }
+
+      //switch block
+      switch(true){
+          case a>b:
+              console.log(true);
+              break;
+          default:
+          console.log("If All condition fails it will return");
+          break;
+      }
+`,
+      },
+      {
+        subTitle: `exception handling`,
+        subDescription: `The <b>try</b> statement defines a code block to run (to try).The <b>catch</b> statement defines a code block to handle any error.The <b>finally</b> statement defines a code block to run regardless of the result.`,
+        snippet: `
+
+        try{
+        console.log(name);
+        }catch(err){
+            console.log(err);
+        }finally{
+            console.log("this block can be used to init");
+        }
+
+
+
+        let name = "james";
+        console.log(name); // james
+        console.log("This line is below the names variable");
+        `,
+      },
+      {
+        subTitle: `throw keyword`,
+        subDescription: `The <b>throw</b> statement defines a custom error.`,
+        snippet: `
+
+      try{
+        throw "Too big";
+      }catch(err){
+          console.log("catch error", err); // Too big
+      }finally{
+          console.log("this block can be used to init");
+      }
+
+      // Creating Custom Error with Error Class.
+      try{
+        throw new Error("Custome Error");
+      }catch(err){
+          console.log("catch error", err);
+      }finally{
+          console.log("this block can be used to init");
+      }
+
+       `,
+      },
+    ],
+  },
+  {
+    title: `functions`,
+    tags: `Functions exist so we can reuse code.`,
+    description: `They are blocks of code that execute whenever they are invoked. Each function is typically written to perform a particular task, like an addition function used to find the sum of two or more numbers. When numbers need to be added anywhere within your code, the addition function can be invoked as many times as necessary.`,
+    content: [
+      {
+        subTitle: `defaultParameters , RestParameter , arrow functions`,
+        subDescription: ``,
+        snippet: `
+        function defaultParams(a,b=10){
+            console.log(a + b);
+        }
+
+        function restParams(...args){
+            console.log(args)
+        }
+
+        const arrowFunction = () =>{
+            console.log("This is an arrow function.");
+        }
+
+        defaultParams(2,10); //12
+        defaultParams(5);//15
+        restParams(12,13,14);//[ 12, 13, 14 ]
+        restParams("james");//[ 'james' ]
+        arrowFunction();//This is an arrow function.
+
+        `,
+      },
+      {
+        subTitle: `closures`,
+        subDescription: `A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.`,
+        snippet: `
+
+        function init() {
+
+          var name = "Mozilla"; // name is a local variable created by init
+
+          function displayName() {
+            // displayName() is the inner function, that forms the closure
+            console.log(name); // use variable declared in the parent function
+          }
+
+          displayName();
+        }
+
+        init();
+        `,
+      },
+      {
+        subTitle: `recursion`,
+        subDescription: `The act of a function calling itself, recursion is used to solve problems that contain smaller sub-problems. A recursive function can receive two inputs: a base case (ends recursion) or a recursive case (resumes recursion).`,
+        snippet: `
+
+        const getMaxCallStackSize = (i) => {
+          try {
+            return getMaxCallStackSize(++i);
+          } catch {
+            return i;
+          }
+        };
+
+        console.log(getMaxCallStackSize(0));
+
+        `,
+      },
+    ],
+  },
+  {
+    title: `asynchronous javascript`,
+    tags: `Functions running in <b> parallel </b> with other functions are called <b>asynchronous</b>.`,
+    description: `Asynchronous programming is a technique that enables your program to start a potentially long-running task and still be able to be responsive to other events while that task runs, rather than having to wait until that task has finished. Once that task has finished, your program is presented with the result.`,
+    content: [
+      {
+        subTitle: `setTimeOut`,
+        subDescription: `The setTimeout runs a function after the specified period expires. Times are declared in milliseconds.`,
+        snippet: `
+
+        setTimeout(() => {
+          console.log("Delayed for 1 second.");
+        }, "1000");
+
+        `,
+      },
+      {
+        subTitle: `setInterval`,
+        subDescription: `The setInterval() method helps us to repeatedly execute a function after a fixed delay. It returns a unique interval ID which can later be used by the clearInterval() method, which stops further repeated execution of the function.`,
+        snippet: `
+
+        // repeat with the interval of 2 seconds
+        let timerId = setInterval(() => alert('tick'), 2000);
+        clearInterval(timerId);
+
+        `,
+      },
+      {
+        subTitle: `callbacks`,
+        subDescription: `A callback function is a function passed into another function as an argument, which is then invoked inside the outer function to complete some kind of routine or action.`,
+        snippet: `
+
+          setTimeout(() => {
+
+          //Taking function has an argument.
+          console.log("Delayed for 1 second.");
+
+        }, "1000");
+
+        `,
+      },
+      {
+        subTitle: `promises`,
+        subDescription: `Promises are a much better way to work with asynchronous code in JavaScript than the old and error-prone callback approach. They were introduced into JavaScript with <b>ECMAScript 6.</b>`,
+        snippet: `
+
+       let myPromise = new Promise(function(myResolve, myReject) {
+        // "Producing Code" (May take some time)
+
+          myResolve(); // when successful
+          myReject();  // when error
+        });
+
+        // "Consuming Code" (Must wait for a fulfilled Promise)
+        myPromise.then(
+          function(value) { /* code if successful */ },
+          function(error) { /* code if some error */ }
+        );
+
+        `,
+      },
+      {
+        subTitle: `Async/Await`,
+        subDescription: `async/await is a special syntax to work with promises in a more comfortable fashion. We use async keyword to declare a async function that return a Promise, and the await keyword makes a function wait for a Promise.`,
+        snippet: `
+        function resolveAfter2Seconds() {
+          return new Promise((resolve) => {
+            setTimeout(() => {
+              resolve('resolved');
+            }, 2000);
+          });
+        }
+
+        async function asyncCall() {
+          console.log('calling');
+          const result = await resolveAfter2Seconds();
+          console.log(result);
+          // Expected output: "resolved"
+        }
+
+        asyncCall();
+        `,
+      },
+    ],
+  },
+  {
+    title: `working with APIS`,
+    tags: `interacting with remote APIS`,
+    description: `When working with remote APIs, you need a way to interact with those APIs. Modern JavaScript provides two native ways to send HTTP requests to remote servers, XMLHttpRequest and Fetch.`,
+    content: [
+      {
+        subTitle: `XMLHttpRequest`,
+        subDescription: `XMLHttpRequest (XHR) objects are used to interact with servers. You can retrieve data from a URL without having to do a full page refresh. This enables a Web page to update just part of a page without disrupting what the user is doing.`,
+        snippet: `
+       let xhr = new XMLHttpRequest();
+
+       xhr.open('GET', '/article/xmlhttprequest/example/json');
+
+       xhr.responseType = 'json';
+
+       xhr.send();
+
+      // the response is {"message": "Hello, world!"}
+        xhr.onload = function() {
+          let responseObj = xhr.response;
+          alert(responseObj.message); // Hello, world!
+        };
+        `,
+      },
+      {
+        subTitle: `Fetch APi`,
+        subDescription: `The Fetch API provides a JavaScript interface for accessing and manipulating parts of the protocol, such as requests and responses. It also provides a global fetch() method that provides an easy, logical way to fetch resources asynchronously across the network.`,
+        snippet: `
+
+        async function logMovies() {
+          const response = await fetch("http://example.com/movies.json");
+          const movies = await response.json();
+          console.log(movies);
+        }
+
+        logMovies();
+        `,
       },
     ],
   },
