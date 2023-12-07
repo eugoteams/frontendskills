@@ -10,17 +10,14 @@ import { Fragment } from "react";
 import js from "../public/assets/img/js.png";
 import Image from "next/image";
 import NumberComponent from "@/Component/AccordionComponent/NumberComponent/NumberComponent";
+import Flex from "@/Component/UI/Flex";
+import ImageComponent from "@/Component/ImageComponent/ImageComponent";
 
 export default function Home() {
   return (
     <Fragment>
-      {/* <Image src={js} alt="Javascript Logo" /> */}
+      <ImageComponent src={js} />
       <Stack $mg={"4rem"}>
-        <Container $width={"100%"}>
-          <Title $fz="2rem" $fw={"900"} $center>
-            javascript
-          </Title>
-        </Container>
         {content.map((chapter, index) => {
           let value = index + 1;
           let num = value / 10 < 1 ? "0" + value : value;

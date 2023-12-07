@@ -19,7 +19,9 @@ const AccordionHeader = ({ id, title, tags, onClickListener, clicked }) => {
     onClickListener();
   }, []);
 
-  console.log("Mouse enter :: ", mouseEnter);
+  const onMouseEnterListener = useCallback(() => {
+    setMouseEnter((prevState) => !prevState);
+  }, []);
 
   return (
     <Fragment>
@@ -28,13 +30,8 @@ const AccordionHeader = ({ id, title, tags, onClickListener, clicked }) => {
         $height={"9rem"}
         $zIndex={"32"}
         $pd={"1rem"}
-        onMouseEnter={() => {
-          setMouseEnter((prevState) => !prevState);
-          console.log("The Mouse Has entered.");
-        }}
-        onMouseLeave={() => {
-          setMouseEnter((prevState) => !prevState);
-        }}
+        onMouseEnter={onMouseEnterListener}
+        onMouseLeave={onMouseEnterListener}
       >
         <Flex>
           <Container>
