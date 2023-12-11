@@ -11,9 +11,6 @@ import Head from "next/head";
 export default function Home() {
   return (
     <Fragment>
-      <Head>
-        <title>Javascript Tutorials</title>
-      </Head>
       <ImageComponent src={js} />
       <Stack $mg={"4rem"}>
         {content.map((chapter, index) => {

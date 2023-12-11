@@ -1,20 +1,16 @@
 /** @format */
 
-import Title from "@/Component/UI/Title";
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import ImageComponent from "@/Component/ImageComponent/ImageComponent";
 import AccordionComponent from "@/Component/AccordionComponent/AccordionComponent";
 import Stack from "@/Component/UI/Stack";
 import htmlTuts from "@/model/htmlTuts";
-import Head from "next/head";
 import html from "../public/assets/img/html.png";
 
 const Html = (props) => {
+  console.log(htmlTuts);
   return (
     <Fragment>
-      <Head>
-        <title>HTML Tutorials</title>
-      </Head>
       <ImageComponent src={html} />
       <Stack $mg={"4rem"}>
         {htmlTuts.map((chapter, index) => {

@@ -8,7 +8,7 @@ const SideDrawer = ({ children, onBackGroundClickListener }) => {
   return (
     <Fragment>
       <Div $pos="absolute" $zIndex={"85"} $bgColor={"inherit"}>
-        <OverLay onClick={onBackGroundClickListener} />
+        <OverLay onClick={onBackGroundClickListener}></OverLay>
         <Div
           $pos="fixed"
           $width="35rem"
