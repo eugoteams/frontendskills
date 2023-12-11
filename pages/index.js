@@ -13,7 +13,7 @@ const Html = (props) => {
     <Fragment>
       <ImageComponent src={html} />
       <Stack $mg={"4rem"}>
-        {/* {htmlTuts.map((chapter, index) => {
+        {htmlTuts.map((chapter, index) => {
           let value = index + 1;
           let num = value / 10 < 1 ? "0" + value : value;
           return (
@@ -26,7 +26,7 @@ const Html = (props) => {
               content={chapter["content"]}
             />
           );
-        })} */}
+        })}
       </Stack>
     </Fragment>
   );
