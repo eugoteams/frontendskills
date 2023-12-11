@@ -7,7 +7,7 @@ import Flex from "../UI/Flex";
 
 const ImageHolder = styled.div`
   width: 100%;
-  height: 10rem;
+  height: 18rem;
   overflow: hidden;
   margin: 1rem auto;
 `;
@@ -17,7 +17,7 @@ const ImageComponent = ({ src }) => {
     <Fragment>
       <ImageHolder>
         <Flex>
-          <Image src={src} alt={"logo.png"} width={50} height={50} />
+          <Image src={src} alt={"logo.png"} width={120} height={120} />
         </Flex>
       </ImageHolder>
     </Fragment>

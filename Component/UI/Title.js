@@ -21,6 +21,13 @@ const Title = styled.div`
       align-items: center;
       justify-content: center;
     `};
+  ${(props) =>
+    props.$left &&
+    css`
+      display: flex;
+      align-items: center;
+      justify-content: left;
+    `};
 
   //Tablet-View-Screen
   @media (max-width: 48em) {

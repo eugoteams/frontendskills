@@ -1,23 +1,22 @@
 /** @format */
 
-import Title from "@/Component/UI/Title";
-import React, { Fragment } from "react";
-import ImageComponent from "@/Component/ImageComponent/ImageComponent";
 import AccordionComponent from "@/Component/AccordionComponent/AccordionComponent";
 import Stack from "@/Component/UI/Stack";
-import htmlTuts from "@/model/htmlTuts";
+import content from "@/model/content";
+import { Fragment } from "react";
+import js from "../public/assets/img/js.png";
+import ImageComponent from "@/Component/ImageComponent/ImageComponent";
 import Head from "next/head";
-import html from "../public/assets/img/html.png";
 
-const Html = (props) => {
+export default function Home() {
   return (
     <Fragment>
       <Head>
-        <title>HTML Tutorials</title>
+        <title>Javascript Tutorials</title>
       </Head>
-      <ImageComponent src={html} />
+      <ImageComponent src={js} />
       <Stack $mg={"4rem"}>
-        {htmlTuts.map((chapter, index) => {
+        {content.map((chapter, index) => {
           let value = index + 1;
           let num = value / 10 < 1 ? "0" + value : value;
           return (
@@ -34,6 +33,4 @@ const Html = (props) => {
       </Stack>
     </Fragment>
   );
-};
-
-export default Html;
+}
