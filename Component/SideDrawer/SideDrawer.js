@@ -7,7 +7,7 @@ import OverLay from "../UI/Overlay";
 const SideDrawer = ({ children, onBackGroundClickListener }) => {
   return (
     <Fragment>
-      <Div $pos="absolute" $zIndex={"85"} $bgColor={"inherit"}>
+      <Div $pos="absolute" $zIndex={"85"} $bgColor={"inherit"} $height="100vh">
         <OverLay onClick={onBackGroundClickListener}></OverLay>
         <Div
           $pos="fixed"
