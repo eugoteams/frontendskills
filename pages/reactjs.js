@@ -14,7 +14,7 @@ const ReactJs = (props) => {
     <Fragment>
       <ImageComponent src={reactjs} />
       <Title $fz={"2rem"} $fw={"800"} $center>
-        Under Work ....!
+        React JS
       </Title>
       <Stack $mg={"4rem"}>
         {reactuts.map((chapter, index) => {
