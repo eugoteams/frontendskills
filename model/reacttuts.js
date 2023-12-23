@@ -171,12 +171,12 @@ const reactuts = [
     ],
   },
   {
-    title: `useRef`,
+    title: `useRef hook`,
     tags: `useRef is a React Hook that lets you reference a value that’s not needed for rendering.`,
     description: ``,
     content: [
       {
-        subTitle: `Syntax`,
+        subTitle: `Syntax & caveats`,
         subDescription: `
            <ul>
             <li><p style="margin-left : 0.4rem;">Call useRef at the top level of your component to declare a ref.</p></li>
@@ -211,57 +211,96 @@ const reactuts = [
       },
     ],
   },
-  //   {
-  //     title: ``,
-  //     tags: ``,
-  //     description: ``,
-  //     content: [
-  //       {
-  //         subTitle: ``,
-  //         subDescription: ``,
-  //         snippet: ``,
-  //       },
-  //       {
-  //         subTitle: ``,
-  //         subDescription: ``,
-  //         snippet: ``,
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     title: ``,
-  //     tags: ``,
-  //     description: ``,
-  //     content: [
-  //       {
-  //         subTitle: ``,
-  //         subDescription: ``,
-  //         snippet: ``,
-  //       },
-  //       {
-  //         subTitle: ``,
-  //         subDescription: ``,
-  //         snippet: ``,
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     title: ``,
-  //     tags: ``,
-  //     description: ``,
-  //     content: [
-  //       {
-  //         subTitle: ``,
-  //         subDescription: ``,
-  //         snippet: ``,
-  //       },
-  //       {
-  //         subTitle: ``,
-  //         subDescription: ``,
-  //         snippet: ``,
-  //       },
-  //     ],
-  //   },
+  {
+    title: `useEffect hook`,
+    tags: `useEffect is a React Hook that lets you synchronize a component with an external system.`,
+    description: ``,
+    content: [
+      {
+        subTitle: `Syntax & caveats`,
+        subDescription: `
+              <ul>
+            <li><p style="margin-left : 0.4rem;">useEffect is a Hook, so you can only call it at the top level of your component or your own Hooks. You can’t call it inside loops or conditions. If you need that, extract a new component and move the state into it.</p></li>
+            <li><p style="margin-left : 0.4rem;"> When Strict Mode is on, React will run one extra development-only setup+cleanup cycle before the first real setup. This is a stress-test that ensures that your cleanup logic “mirrors” your setup logic and that it stops or undoes whatever the setup is doing. If this causes a problem, implement the cleanup function.</p></li>
+            <li><p style="margin-left : 0.4rem;"> If your Effect wasn’t caused by an interaction (like a click), React will generally let the browser paint the updated screen first before running your Effect. If your Effect is doing something visual (for example, positioning a tooltip), and the delay is noticeable (for example, it flickers), replace useEffect with <b>useLayoutEffect</b>. </p></li>
+            <li><p style="margin-left : 0.4rem;"> Effects only run on the client. They don’t run during server rendering. </p></li>
+        </ul>`,
+        snippet: `
+        function ChatRoom({ roomId }) {
+                const [serverUrl, setServerUrl] = useState('https://localhost:1234');
+
+                useEffect(() => {
+                  const connection = createConnection(serverUrl, roomId);
+                  connection.connect();
+
+                  return () => {
+                    //Clenaup  Code.
+                    connection.disconnect();
+                  };
+                }, [serverUrl, roomId]);
+                // ...
+        }
+
+        `,
+      },
+    ],
+  },
+  {
+    title: `useid hook`,
+    tags: `useId is a React Hook for generating unique IDs that can be passed to accessibility attributes.`,
+    description: ``,
+    content: [
+      {
+        subTitle: `syntax & caveats`,
+        subDescription: `
+        <ul>
+            <li><p style="margin-left : 0.4rem;">useId is a Hook, so you can only call it at the top level of your component or your own Hooks. You can’t call it inside loops or conditions. If you need that, extract a new component and move the state into it.</p></li>
+            <li><p style="margin-left : 0.4rem;"> useId <b>should not be used to generate keys in a list/<b></li>
+        </ul>
+        `,
+        snippet: `
+
+
+        import { useId } from 'react';
+
+        function PasswordField() {
+          const passwordHintId = useId();
+
+          return <>
+            <input type="password" aria-describedby={passwordHintId} />
+            <p id={passwordHintId}>
+          </>;
+
+        }
+        `,
+      },
+    ],
+  },
+  {
+    title: `useDebugValue hook`,
+    tags: `useDebugValue is a React Hook that lets you add a label to a custom Hook in React DevTools.`,
+    description: ``,
+    content: [
+      {
+        subTitle: `syntax & caveats`,
+        subDescription: `   <ul>
+            <li><p style="margin-left : 0.4rem;">Call useDebugValue at the top level of your custom Hook to display a readable debug value.</p></li>
+            <li><p style="margin-left : 0.4rem;"> useId <b>should not be used to generate keys in a list/<b></li>
+        </ul>`,
+        snippet: `
+
+        import { useDebugValue } from 'react';
+
+        function useOnlineStatus() {
+          // ...
+          useDebugValue(isOnline ? 'Online' : 'Offline');
+          // ...
+        }
+
+        `,
+      },
+    ],
+  },
   //   {
   //     title: ``,
   //     tags: ``,

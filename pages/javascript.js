@@ -7,6 +7,7 @@ import { Fragment } from "react";
 import js from "../public/assets/img/js.png";
 import ImageComponent from "@/Component/ImageComponent/ImageComponent";
 import Head from "next/head";
+import Title from "@/Component/UI/Title";
 
 export default function Home() {
   return (

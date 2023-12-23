@@ -6,6 +6,7 @@ import AccordionComponent from "@/Component/AccordionComponent/AccordionComponen
 import Stack from "@/Component/UI/Stack";
 import htmlTuts from "@/model/htmlTuts";
 import html from "../public/assets/img/html.png";
+import Title from "@/Component/UI/Title";
 
 const Html = (props) => {
   console.log(htmlTuts);
