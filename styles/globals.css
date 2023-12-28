@@ -12,12 +12,14 @@ html {
 }
 
 pre {
-  font-size: 1.3rem;
-  border-radius: 0.5rem;
+  font-size: 1.4rem !important;
+  border-radius: 0.5rem !important;
   overflow: hidden;
-  width: 90%;
-  margin: 1rem auto;
-  padding: 0;
+  width: 95%;
+  margin: 0rem auto !important;
+  padding: 0 !important;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px !important;
+  background-color: #f1f3f5 !important;
 }
 
 p {
@@ -26,7 +28,7 @@ p {
 }
 
 li {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   /* //list-style-type: disc; */
   list-style: none;
   position: relative;

@@ -1,11 +1,13 @@
 /** @format */
 
-import { Fragment, memo } from "react";
-import Highlight from "react-highlight";
-const CodeHighLighter = ({ snippet }) => {
+import { Fragment, memo, useEffect, useState } from "react";
+
+const CodeHighLighter = ({ snippet, language }) => {
   return (
     <Fragment>
-      <Highlight language="javascript">{snippet}</Highlight>
+      <pre>
+        <code className={`language-${language}`}>{snippet}</code>
+      </pre>
     </Fragment>
   );
 };

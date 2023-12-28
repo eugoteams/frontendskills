@@ -8,7 +8,7 @@ import Stack from "@/Component/UI/Stack";
 import CodeHighLighter from "@/Component/CodeHighLighter/CodeHighLighter";
 import Div from "@/Component/UI/Div";
 
-const AccordionBody = ({ description, content }) => {
+const AccordionBody = ({ description, content, language }) => {
   return (
     <Fragment>
       <Div $overflow="auto" $height={"100%"}>
@@ -39,6 +39,7 @@ const AccordionBody = ({ description, content }) => {
                       {cnt["snippet"] && (
                         <CodeHighLighter
                           snippet={cnt["snippet"]}
+                          language={language}
                         ></CodeHighLighter>
                       )}
                     </Stack>

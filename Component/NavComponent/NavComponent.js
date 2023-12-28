@@ -18,7 +18,6 @@ const inter = Inter({
 
 const NavComponent = (props) => {
   const [drawer, setDrawer] = useState();
-  console.log("Adding log on click");
 
   const drawerToggle = useCallback(() => {
     setDrawer((prevState) => !prevState);
