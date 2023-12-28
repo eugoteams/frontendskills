@@ -7,7 +7,6 @@ import html from "../public/assets/img/html.png";
 import DocComponent from "@/Component/DocComponent/DocComponent";
 
 const Html = (props) => {
-  console.log(htmlTuts);
   return (
     <Fragment>
       <ImageComponent src={html} />

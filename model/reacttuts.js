@@ -402,18 +402,16 @@ const reactuts = [
   {
     title: `useState Hook`,
     tags: `useState is a React Hook that lets you add a state variable to your component.`,
-    description: ``,
-    content: [
-      {
-        subTitle: `Syntax & caveats`,
-        subDescription: `<b>initialState</b>: The value you want the state to be initially. It can be a value of any type, but there is a special behavior for functions. This argument is ignored after the initial render.
-
-        <ul>
+    description: `
+      <ul>
             <li><p style="margin-left : 0.4rem;">useState returns an array with exactly two values: <b>current state</b> & <b>setter function</b>.<b><i>It trigger a re-render a component if the  value is updated using setter.</i></b></p></li>
             <li><p style="margin-left : 0.4rem;"> you can only call it at the top level of your component or your own Hooks. You can’t call it inside loops or conditions.</p></li>
         </ul>
-
-            `,
+    `,
+    content: [
+      {
+        subTitle: `Syntax & usage :`,
+        subDescription: `<b>initialState</b>: The value you want the state to be initially. It can be a value of any type, but there is a special behavior for functions. This argument is ignored after the initial render. `,
         snippet: `
             //Syntax:
             const [state, setState] = useState(initialState);
@@ -434,22 +432,22 @@ const reactuts = [
   {
     title: `useRef hook`,
     tags: `useRef is a React Hook that lets you reference a value that’s not needed for rendering.`,
-    description: ``,
-    content: [
-      {
-        subTitle: `Syntax & caveats`,
-        subDescription: `
+    description: `
            <ul>
             <li><p style="margin-left : 0.4rem;">Call useRef at the top level of your component to declare a ref.</p> </li>
             <li><p style="margin-left : 0.4rem;"> You can mutate the ref.current property. Unlike state, it is mutable.</p>  </li>
             <li><p style="margin-left : 0.4rem;"> <b>Changing a ref does not trigger a re-render.</b> This means refs are perfect for storing information that doesn’t affect the visual output of your component. </p>  </li>
         </ul>
             `,
+    content: [
+      {
+        subTitle: `Syntax & usage :`,
+        subDescription: ``,
         snippet: `
         //Syntax :
         const ref = useRef(initialValue)
 
-        //Usage:
+        //usage ::
         import { useRef } from 'react';
 
         export default function Counter() {
@@ -474,15 +472,15 @@ const reactuts = [
   {
     title: `useImperativeHandle hook`,
     tags: `useImperativeHandle is a React Hook that lets you customize the handle exposed as a <b>ref</b>.`,
-    description: ``,
-    content: [
-      {
-        subTitle: `syntax & caveats`,
-        subDescription: `
+    description: `
         <ul>
             <li><p style="margin-left : 0.4rem;"><b>Do not overuse refs.</b> You should only use refs for imperative behaviors that you can’t express as props: for example, scrolling to a node, focusing a node, triggering an animation, selecting text, and so on..</p></li>
          </ul>
-        `,
+       `,
+    content: [
+      {
+        subTitle: `syntax & usage :`,
+        subDescription: ``,
         snippet: `
         import { forwardRef, useRef, useImperativeHandle } from 'react';
 
@@ -509,17 +507,17 @@ const reactuts = [
   {
     title: `useEffect hook`,
     tags: `useEffect is a React Hook that lets you synchronize a component with an external system.`,
-    description: ``,
-    content: [
-      {
-        subTitle: `Syntax & caveats`,
-        subDescription: `
-              <ul>
+    description: `
+          <ul>
             <li><p style="margin-left : 0.4rem;">useEffect is a Hook, so you can only call it at the top level of your component or your own Hooks. You can’t call it inside loops or conditions. If you need that, extract a new component and move the state into it.</p></li>
             <li><p style="margin-left : 0.4rem;"> When Strict Mode is on, React will run one extra development-only setup+cleanup cycle before the first real setup. This is a stress-test that ensures that your cleanup logic “mirrors” your setup logic and that it stops or undoes whatever the setup is doing. If this causes a problem, implement the cleanup function.</p></li>
             <li><p style="margin-left : 0.4rem;"> If your Effect wasn’t caused by an interaction (like a click), React will generally let the browser paint the updated screen first before running your Effect. If your Effect is doing something visual (for example, positioning a tooltip), and the delay is noticeable (for example, it flickers), replace useEffect with <b>useLayoutEffect</b>.</p> </li>
             <li><p style="margin-left : 0.4rem;"> Effects only run on the client. They don’t run during server rendering. </p> </li>
         </ul>`,
+    content: [
+      {
+        subTitle: `Syntax & usage :`,
+        subDescription: ``,
         snippet: `
         function ChatRoom({ roomId }) {
                 const [serverUrl, setServerUrl] = useState('https://localhost:1234');
@@ -543,16 +541,16 @@ const reactuts = [
   {
     title: `useId hook`,
     tags: `useId is a React Hook for generating unique IDs that can be passed to accessibility attributes.`,
-    description: ``,
-    content: [
-      {
-        subTitle: `syntax & caveats`,
-        subDescription: `
+    description: `
         <ul>
             <li><p style="margin-left : 0.4rem;">useId is a Hook, so you can only call it at the top level of your component or your own Hooks. You can’t call it inside loops or conditions. If you need that, extract a new component and move the state into it.</p></li>
             <li><p style="margin-left : 0.4rem;"> useId <b>should not be used to generate keys in a list<b>.</p></li>
         </ul>
-        `,
+       `,
+    content: [
+      {
+        subTitle: `syntax & usage :`,
+        subDescription: ``,
         snippet: `
         import { useId } from 'react';
 
@@ -580,15 +578,15 @@ const reactuts = [
   {
     title: `useDebugValue hook`,
     tags: `useDebugValue is a React Hook that lets you add a label to a custom Hook in React DevTools.`,
-    description: ``,
-    content: [
-      {
-        subTitle: `syntax & caveats`,
-        subDescription: `
+    description: `
         <ul>
             <li><p style="margin-left : 0.4rem;">Call useDebugValue at the top level of your custom Hook to display a readable debug value.</p></li>
             <li><p style="margin-left : 0.4rem;"> useId <b>should not be used to generate keys in a list</b>.</p></li>
         </ul>`,
+    content: [
+      {
+        subTitle: `syntax & usage :`,
+        subDescription: ``,
         snippet: `
 
         import { useDebugValue } from 'react';
@@ -606,18 +604,18 @@ const reactuts = [
   {
     title: `useDeferredValue hook`,
     tags: `useDeferredValue is a React Hook that lets you defer updating a part of the UI.`,
-    description: ``,
-    content: [
-      {
-        subTitle: `syntax & caveats`,
-        subDescription: `
+    description: `
         <ul>
           <li><p style="margin-left : 0.4rem;">During the initial render, the deferred value will be the same as the value you provided.</p></li>
           <li><p style="margin-left : 0.4rem;"> During updates, the deferred value will “lag behind” the latest value. In particular, React will first re-render without updating the deferred value, and then try to re-render with the newly received value in background.</p></li>
           <li><p style="margin-left : 0.4rem;"> The values you pass to useDeferredValue should either be primitive values (like strings and numbers) or objects created outside of rendering. If you create a new object during rendering and immediately pass it to useDeferredValue, it will be different on every render, causing unnecessary background re-renders.</p></li>
         </ul>
 
-        `,
+       `,
+    content: [
+      {
+        subTitle: `syntax & usage :`,
+        subDescription: ``,
         snippet: `
 
         import { useState, useDeferredValue } from 'react';
@@ -640,18 +638,17 @@ const reactuts = [
   {
     title: `useInsertionEffect hook`,
     tags: `useInsertionEffect allows inserting elements into the DOM before any layout effects fire.`,
-    description: ``,
-    content: [
-      {
-        subTitle: `syntax & caveats`,
-        subDescription: `
+    description: `
         <ul>
           <li><p style="margin-left : 0.4rem;">Effects only run on the client. They don’t run during server rendering.</p></li>
           <li><p style="margin-left : 0.4rem;"> You can’t update state from inside useInsertionEffect.</p></li>
           <li><p style="margin-left : 0.4rem;"> By the time useInsertionEffect runs, refs are not attached yet.</p></li>
         </ul>
-
-        `,
+`,
+    content: [
+      {
+        subTitle: `syntax & usage :`,
+        subDescription: ``,
         snippet: `
 
           // Inside your CSS-in-JS library
@@ -681,15 +678,15 @@ const reactuts = [
   {
     title: `useLayoutEffect hook`,
     tags: `useLayoutEffect is a version of useEffect that fires before the browser repaints the screen.`,
-    description: ``,
-    content: [
-      {
-        subTitle: `syntax & caveats`,
-        subDescription: `
+    description: `
         <ul>
           <li><p style="margin-left : 0.4rem;">Call useLayoutEffect to perform the layout measurements before the browser repaints the screen.</p></li>
         </ul>
         `,
+    content: [
+      {
+        subTitle: `syntax & usage :`,
+        subDescription: ``,
         snippet: `
 
         import { useState, useRef, useLayoutEffect } from 'react';
@@ -719,7 +716,7 @@ const reactuts = [
         </ul>`,
     content: [
       {
-        subTitle: `syntax & usage`,
+        subTitle: `syntax & usage :`,
         subDescription: ``,
         snippet: `
 
@@ -768,16 +765,16 @@ const reactuts = [
   {
     title: `useReducer hook`,
     tags: `useReducer is a React Hook that lets you add a reducer to your component.`,
-    description: ``,
-    content: [
-      {
-        subTitle: `syntax & caveats`,
-        subDescription: `
+    description: `
         <ul>
          <li><p style="margin-left : 0.4rem;">useReducer is a Hook, so you can only call it at the top level of your component or your own Hooks. You can’t call it inside loops or conditions. If you need that, extract a new component and move the state into it.</p></li>
           <li><p style="margin-left : 0.4rem;">In Strict Mode, React will <b>call your reducer and initializer twice </b>in order to help you find accidental impurities. </p></li>
         </ul>
         `,
+    content: [
+      {
+        subTitle: `syntax & usage`,
+        subDescription: ``,
         snippet: `
 
         import { useReducer } from 'react';
@@ -820,7 +817,7 @@ const reactuts = [
         </ul>`,
     content: [
       {
-        subTitle: `syntax & caveats`,
+        subTitle: `syntax & usage:`,
         subDescription: ``,
         snippet: `
 
@@ -874,11 +871,7 @@ const reactuts = [
   {
     title: `useSyncExternalStore hook`,
     tags: `useSyncExternalStore is a React Hook that lets you subscribe to an external store.`,
-    description: ``,
-    content: [
-      {
-        subTitle: `syntax & caveats`,
-        subDescription: `
+    description: `
         <ul>
          <li><p style="margin-left : 0.4rem;">The store snapshot returned by getSnapshot must be immutable. If the underlying store has mutable data, return a new immutable snapshot if the data has changed. Otherwise, return a cached last snapshot.</p></li>
           <li><p style="margin-left : 0.4rem;">If a different subscribe function is passed during a re-render, React will re-subscribe to the store using the newly passed subscribe function. You can prevent this by declaring subscribe outside the component. </p></li>
@@ -886,6 +879,10 @@ const reactuts = [
           <li><p style="margin-left : 0.4rem;">It’s not recommended to suspend a render based on a store value returned by useSyncExternalStore. The reason is that mutations to the external store cannot be marked as non-blocking transition updates, so they will trigger the nearest Suspense fallback, replacing already-rendered content on screen with a loading spinner, which typically makes a poor UX.</p></li>
         </ul>
         `,
+    content: [
+      {
+        subTitle: `syntax & usage:`,
+        subDescription: ``,
         snippet: `
 
         // todoStore.js
@@ -1046,41 +1043,6 @@ const reactuts = [
       },
     ],
   },
-
-  //   {
-  //     title: ``,
-  //     tags: ``,
-  //     description: ``,
-  //     content: [
-  //       {
-  //         subTitle: ``,
-  //         subDescription: ``,
-  //         snippet: ``,
-  //       },
-  //       {
-  //         subTitle: ``,
-  //         subDescription: ``,
-  //         snippet: ``,
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     title: ``,
-  //     tags: ``,
-  //     description: ``,
-  //     content: [
-  //       {
-  //         subTitle: ``,
-  //         subDescription: ``,
-  //         snippet: ``,
-  //       },
-  //       {
-  //         subTitle: ``,
-  //         subDescription: ``,
-  //         snippet: ``,
-  //       },
-  //     ],
-  //   },
 ];
 
 export default reactuts;
